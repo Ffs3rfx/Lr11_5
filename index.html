@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратній порядок чисел</title>
+<script>
+    function fibonacci(n) {
+        if (n <= 1) return n;
+        let a = 0, b = 1, temp;
+
+        for (let i = 2; i <= n; i++) {
+            temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return b;
+    }
+
+    // Використання prompt() для введення числа n
+    const n = parseInt(prompt("Введіть номер члена послідовності Фібоначчі:"));
+    if (!isNaN(n) && n >= 0) {
+        alert(`Член послідовності Фібоначчі №${n}: ${fibonacci(n)}`);
+    } else {
+        alert("Будь ласка, введіть коректне число.");
+    }
+</script>
+</head>
+<body>
+    <h1>Виведення чисел в оберненому порядку</h1>
+    <label for="numbers">Введіть послідовність чисел (через кому): </label>
+    <input type="text" id="numbers" placeholder="1, 2, 3, 4"><br><br>
+    
+    <button onclick="reverseNumbers()">Показати обернений порядок</button>sssss
+
+    <p id="result"></p>
+</body>
+</html>
